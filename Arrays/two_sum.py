@@ -10,14 +10,15 @@ def twoSum( nums, target):
     for i in range(len(nums)):
         sub = target-nums[i]
         if sub in frequency_sum:
+            print("Entered")
             return [frequency_sum[sub],i]
         
         frequency_sum[nums[i]]=i
 
     return frequency_sum
 
-nums = [0, -1, 2, -3, 1]
-target =-2
+nums = [2,7,11,15]
+target = 9
         
 
 print(twoSum(nums,target))
