@@ -15,7 +15,7 @@
 def removeDuplicates(nums):
     write = 2
 
-    for i in range(len(nums)):
+    for i in range(2,len(nums)):
         if nums[i] != nums[write]:
             nums[write] = nums[i]
             write += 1
@@ -26,7 +26,7 @@ def removeDuplicates(nums):
 
 
 
-nums = [1,1,1,1,2,2,2,2,3]
+nums = [0,0,1,1,1,2,2,3,3,4]
 print(removeDuplicates(nums))
 
     
