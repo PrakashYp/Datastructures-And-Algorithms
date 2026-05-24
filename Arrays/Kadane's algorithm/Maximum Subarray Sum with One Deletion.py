@@ -12,8 +12,10 @@
 #         prev_one_del = one_del
 
 #         no_del = max(arr[i], prev_no_del + arr[i])
-
 #         one_del = max(prev_no_del,prev_one_del + arr[i])
+
+        # no_delete_sum = max(prev_no_delete+arr[i],arr[i])
+        # one_delete_sum = max(prev_one_delete,prev_no_delete+arr[i])
 
 #         ans = max(ans, no_del, one_del)
 
@@ -29,25 +31,23 @@
 
 def maximumSum(arr):
     one_delete_sum = 0
-    total_sum = arr[0]
-    ans = 0
+    total_delete_sum = arr[0]
+    ans = arr[0]
     for i in range(1,len(arr)):
-        prev_delete_sum = total_sum
+        prev_total_delete_sum = total_delete_sum
         prev_one_delete_sum = one_delete_sum
-        one_delete_sum = max(prev_delete_sum,prev_one_delete_sum+arr[i])
-        total_sum = max(prev_delete_sum+arr[i],arr[i])
 
-        ans = max(one_delete_sum,ans,total_sum)
+        total_delete_sum = max(arr[i],prev_total_delete_sum+arr[i])
+        one_delete_sum = max(prev_one_delete_sum+arr[i],prev_total_delete_sum)
 
-
-
-
+        ans = max(one_delete_sum,total_delete_sum,ans)
     return ans
 
 
+    
 
-arr = [1,-2,0,3]
 
+arr = [-1,-1,-1,-1]
 print(maximumSum(arr))
 
 
