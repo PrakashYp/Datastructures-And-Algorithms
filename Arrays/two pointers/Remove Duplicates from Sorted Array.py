@@ -4,7 +4,7 @@ def removeDuplicates(nums):
     :rtype: int
     """
 
-    k=0
+
     left=1
     for i in range(len(nums)):
         if nums[i]> nums[left-1]:

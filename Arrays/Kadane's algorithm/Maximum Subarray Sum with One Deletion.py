@@ -47,7 +47,7 @@ def maximumSum(arr):
     
 
 
-arr = [-1,-1,-1,-1]
+arr = [10,20,-30,-1,40]
 print(maximumSum(arr))
 
 

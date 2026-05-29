@@ -10,7 +10,7 @@ def maxProfit(prices):
 
 
     for i in range(len(prices)):
-        best_day = min(best_day,prices[i])
+        best_day = min(best_day,prices[i]) 
         max_profit = max(max_profit,prices[i] - best_day)
         print(best_day    , max_profit)
 
