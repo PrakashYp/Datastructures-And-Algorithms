@@ -15,10 +15,10 @@ def maximumsSplicedArray(nums1, nums2):
 
         return total_max
     
-    n = len(nums1)-1
+
     gain_nums1 = []
     gain_nums2 = []
-    for i in range(n):
+    for i in range(len(nums1)):
         gain_nums1.append(nums2[i]-nums1[i])
         gain_nums2.append(nums1[i]-nums2[i])
 
