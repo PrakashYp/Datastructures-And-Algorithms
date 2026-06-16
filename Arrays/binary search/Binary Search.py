@@ -9,6 +9,7 @@ def search(nums, target):
 
     while left<=right:
         mid = left+(right-left) // 2
+        print(mid)
 
         if nums[mid] == target:
             return mid
@@ -19,7 +20,8 @@ def search(nums, target):
 
     return -1 
 
-nums =[-1,0,3,5,9,12]
+nums = [5,7,7,8,8,10]
+target = 8
 
-print(search(nums,9))
+print(search(nums,target))
 
