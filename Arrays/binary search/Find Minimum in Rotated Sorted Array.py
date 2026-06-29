@@ -12,7 +12,7 @@ def findMin(nums):
             low = mid + 1 
         elif nums[mid] <= nums[high]:
             high = mid - 1
-        min_value = nums[mid]
+        min_value = min(min_value,nums[mid])
         
     return min_value
 
