@@ -1,3 +1,5 @@
+#Practice this again
+
 def findInMountainArray(target, mountainArr):
     """
     :type target: integer
@@ -50,7 +52,7 @@ def findInMountainArray(target, mountainArr):
 
     ans = left_occurence(target,mountainArr,peak)
     if ans != -1:
-        return ans
+        return ans 
     return right_occurence(target,mountainArr,peak)
 
 
