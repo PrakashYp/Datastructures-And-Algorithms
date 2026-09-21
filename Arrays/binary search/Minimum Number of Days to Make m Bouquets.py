@@ -1,50 +1,46 @@
-def minDays(bloomDay, m, k):
-    """
-    :type bloomDay: List[int]
-    :type m: int
-    :type k: int
-    :rtype: int
-    """
-    count = m * k
-    if count > len(bloomDay):
-        return -1
-    def can_finish(day):
+# def minDays(bloomDay, m, k):
+#     """
+#     :type bloomDay: List[int]
+#     :type m: int
+#     :type k: int
+#     :rtype: int
+#     """
+#     count = m*k
+#     if count > len(bloomDay):
+#         return -1 
 
-        consecutives = 0
-        bouquets = 0
-
-        for flower in bloomDay:
-
-            if flower <= day:
-                consecutives += 1
-                if consecutives == k:
-                    bouquets += 1
-                    consecutives = 0
-            else:
-                consecutives = 0
+#     def can_bloom(days):
+#         bloom_count = 0 
+#         flower = 0 
+#         for day in bloomDay:
+#             if (days-day) >= 0:
+#                 bloom_count += 1
+#             if bloom_count == k:
+#                 flower += 1
+#                 bloom_count = 0 
+#         return flower == m
 
 
-        return bouquets >= m
 
-    low = min(bloomDay)
-    high = max(bloomDay)
-
-    while low <= high:
-        day = low + (high-low) // 2
-        if can_finish(day):
-            high = day - 1
-        else:
-            low = day + 1
-
-
-    return low 
+     
 
 
 
 
-
+def can_bloom(days):
+    bloomDay =[7,7,7,7,12,7,7] 
+    m = 2
+    k = 3 
+    bloom_count = 0 
+    flower = 0 
+    for day in bloomDay:
+        if (days-day) >= 0:
+            bloom_count += 1
+        if bloom_count == k:
+            flower += 1
+            bloom_count = 0
+    print(flower)
+    return flower >= m
         
-bloomDay =[1,10,3,10,2]    
-m = 3
-k = 1   
-print(minDays(bloomDay,m,k))
+ 
+print(can_bloom(7))

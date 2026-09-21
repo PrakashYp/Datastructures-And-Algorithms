@@ -4,29 +4,33 @@ def maxDistance(position, m):
     :type m: int
     :rtype: int
     """
+        
+    position.sort()
+    def gives_minimum(mid):
+
+        balls_placed = 1
+        last_placed_ball = position[0]
+
+        for basket in position[1:]:
+            if basket - last_placed_ball >= mid:
+                balls_placed += 1 
+                last_placed_ball =basket
+                
+        return balls_placed >= m
+
+    low = 1
+    high = max(position)
+
+    while low <= high:
+        mid = low +(high - low) // 2
+
+        if gives_minimum(mid):
+            low = mid + 1 
+        else:
+            high = mid -1 
 
 
-    pass
-
-
-
-def gives_minimum(mid):
-    positions = [1,2,3,4,7]
-    m = 3
-    count= 1
-    minimum_count = positions[0]
-
-    for position in positions:
-        if count == m:
-            minimum_count =   min((minimum_count - position),minimum_count)
-
-        count += 1
-
-    
-    return abs(minimum_count - 1)
-
-print(gives_minimum(3))
-
+    return low - 1
 
 
 
